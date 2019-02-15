@@ -80,7 +80,7 @@ class ViewController: UIViewController {
         processInputPattern(inputNumber: 1)
         playSoundM4a(filename:"C")
         //wouldn't change back to white
-//        cButton.layer.backgroundColor = UIColor.gray.cgColor
+        cButton.layer.backgroundColor = UIColor.gray.cgColor
     }
     
     @IBAction func handleButtonD(_ sender: UIButton) {
