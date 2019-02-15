@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var aButton: UIButton!
     @IBOutlet weak var bButton: UIButton!
     @IBOutlet weak var c8Button: UIButton!
+    @IBOutlet weak var myButton: UIButton!
     
     @IBOutlet weak var resetButton: UIButton!
     
@@ -41,24 +42,32 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         cButton.layer.borderColor = UIColor.black.cgColor
         cButton.layer.borderWidth = 1.0
-//        cButton.layer.cornerRadius = 4.0
+        cButton.layer.backgroundColor = UIColor.white.cgColor
         dButton.layer.borderColor = UIColor.black.cgColor
         dButton.layer.borderWidth = 1.0
+        dButton.layer.backgroundColor = UIColor.white.cgColor
         eButton.layer.borderColor = UIColor.black.cgColor
         eButton.layer.borderWidth = 1.0
+        eButton.layer.backgroundColor = UIColor.white.cgColor
         fButton.layer.borderColor = UIColor.black.cgColor
         fButton.layer.borderWidth = 1.0
+        fButton.layer.backgroundColor = UIColor.white.cgColor
         gButton.layer.borderColor = UIColor.black.cgColor
         gButton.layer.borderWidth = 1.0
+        gButton.layer.backgroundColor = UIColor.white.cgColor
         aButton.layer.borderColor = UIColor.black.cgColor
         aButton.layer.borderWidth = 1.0
+        aButton.layer.backgroundColor = UIColor.white.cgColor
         bButton.layer.borderColor = UIColor.black.cgColor
         bButton.layer.borderWidth = 1.0
+        bButton.layer.backgroundColor = UIColor.white.cgColor
         c8Button.layer.borderColor = UIColor.black.cgColor
         c8Button.layer.borderWidth = 1.0
+        c8Button.layer.backgroundColor = UIColor.white.cgColor
+        myButton.layer.borderColor = UIColor.black.cgColor
+        myButton.layer.borderWidth = 1.0
         // Reset screen on app start.
         resetScreen()
-        
     }
 
     // Helper method to reset the screen.
@@ -75,47 +84,77 @@ class ViewController: UIViewController {
     
     // Callback methods for button presses.
 
-    @IBAction func handleButtonC(_ sender: UIButton) {
-        // Process current pattern with input 1.
+    
+    @IBAction func handleCButton(_ sender: UIButton) {
         processInputPattern(inputNumber: 1)
         playSoundM4a(filename:"C")
-        //wouldn't change back to white
         cButton.layer.backgroundColor = UIColor.gray.cgColor
     }
+    @IBAction func releaseCButton(_ sender: UIButton) {
+        cButton.layer.backgroundColor = UIColor.white.cgColor
+    }
     
-    @IBAction func handleButtonD(_ sender: UIButton) {
+    @IBAction func handleDButton(_ sender: UIButton) {
         processInputPattern(inputNumber: 2)
         playSoundM4a(filename:"D")
+        dButton.layer.backgroundColor = UIColor.gray.cgColor
+    }
+    @IBAction func releaseDButton(_ sender: UIButton) {
+        dButton.layer.backgroundColor = UIColor.white.cgColor
     }
     
-    @IBAction func handleButtonE(_ sender: UIButton) {
+    @IBAction func handleEButton(_ sender: UIButton) {
         processInputPattern(inputNumber: 3)
         playSoundM4a(filename:"E")
+        eButton.layer.backgroundColor = UIColor.gray.cgColor
+    }
+    @IBAction func releaseEButton(_ sender: UIButton) {
+        eButton.layer.backgroundColor = UIColor.white.cgColor
     }
     
-    @IBAction func handleButtonF(_ sender: UIButton) {
+    @IBAction func handleFButton(_ sender: Any) {
         processInputPattern(inputNumber: 4)
         playSoundM4a(filename:"F")
+        fButton.layer.backgroundColor = UIColor.gray.cgColor
+    }
+    @IBAction func releaseFButton(_ sender: UIButton) {
+        fButton.layer.backgroundColor = UIColor.white.cgColor
     }
     
-    @IBAction func handleButtonG(_ sender: UIButton) {
+    @IBAction func handleGButton(_ sender: UIButton) {
         processInputPattern(inputNumber: 5)
         playSoundM4a(filename:"G")
+        gButton.layer.backgroundColor = UIColor.gray.cgColor
+    }
+    @IBAction func releaseGButton(_ sender: UIButton) {
+        gButton.layer.backgroundColor = UIColor.white.cgColor
     }
     
-    @IBAction func handleButtonA(_ sender: UIButton) {
+    @IBAction func handleAButton(_ sender: UIButton) {
         processInputPattern(inputNumber: 6)
         playSoundM4a(filename:"A")
+        aButton.layer.backgroundColor = UIColor.gray.cgColor
+    }
+    @IBAction func releaseAButton(_ sender: UIButton) {
+        aButton.layer.backgroundColor = UIColor.white.cgColor
     }
     
-    @IBAction func handleButtonB(_ sender: UIButton) {
+    @IBAction func handleBButton(_ sender: UIButton) {
         processInputPattern(inputNumber: 7)
         playSoundM4a(filename:"B")
+        bButton.layer.backgroundColor = UIColor.gray.cgColor
+    }
+    @IBAction func releaseBButton(_ sender: UIButton) {
+        bButton.layer.backgroundColor = UIColor.white.cgColor
     }
     
-    @IBAction func handleButtonC8(_ sender: UIButton) {
+    @IBAction func handleC8Button(_ sender: UIButton) {
         processInputPattern(inputNumber: 8)
         playSoundM4a(filename:"C8")
+        c8Button.layer.backgroundColor = UIColor.gray.cgColor
+    }
+    @IBAction func releaseC8Button(_ sender: UIButton) {
+        c8Button.layer.backgroundColor = UIColor.white.cgColor
     }
     
     @IBAction func handleResetButton(_ sender: UIButton) {
