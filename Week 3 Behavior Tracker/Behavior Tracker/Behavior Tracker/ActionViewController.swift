@@ -24,6 +24,17 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         super.viewDidLoad()
         createPickerView()
         dismissPickerView()
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.addTarget(self, action: #selector(ActionViewController.datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
+        dateTextField.inputView = datePicker
+    }
+    
+    @objc func datePickerValueChanged(sender:UIDatePicker){
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        dateTextField.text = formatter.string(from: sender.date)
     }
     
     
