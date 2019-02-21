@@ -48,7 +48,7 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         // Pass back data.
         let meal = Meal(imageName: "",
                         date: dateTextField.text ?? "",
-                        bld: typeTextField.text ?? "",
+                        bld: mealTextField.text ?? "",
                         type: typeTextField.text ?? "")
         didSaveMeal?(meal)
         //save date, bld, type, add to array
