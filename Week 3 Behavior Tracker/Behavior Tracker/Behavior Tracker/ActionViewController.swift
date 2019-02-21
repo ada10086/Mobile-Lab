@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     
+    @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var mealTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
@@ -24,6 +25,31 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         dismissPickerView()
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    @IBAction func handleImportImage(_ sender: UIButton) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.allowsEditing = false
+        self.present(image, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            myImageView.image = image
+        }
+        else{
+            //error message
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
     
     @IBAction func handleSaveButton(_ sender: UIButton) {
         if typeTextField.text == "Own Food" {
@@ -60,11 +86,15 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.dismiss(animated: true, completion: nil)
     }
     
-    
+    //doesnt work???
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Dismisses keyboard when done is pressed.
         view.endEditing(true)
         return false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     
