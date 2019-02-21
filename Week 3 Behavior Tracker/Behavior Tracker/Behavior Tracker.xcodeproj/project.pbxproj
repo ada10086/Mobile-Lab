@@ -12,7 +12,6 @@
 		50A8B389221C9FE4009ADE5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A8B388221C9FE4009ADE5A /* Assets.xcassets */; };
 		50A8B38C221C9FE4009ADE5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A8B38A221C9FE4009ADE5A /* LaunchScreen.storyboard */; };
 		50A8B394221CC711009ADE5A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8B393221CC711009ADE5A /* TableViewController.swift */; };
-		50A8B396221CC8AF009ADE5A /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8B395221CC8AF009ADE5A /* ViewController1.swift */; };
 		50A8B398221CC975009ADE5A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8B397221CC975009ADE5A /* TabBarController.swift */; };
 		50A8B39A221CCF47009ADE5A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8B399221CCF47009ADE5A /* TableViewCell.swift */; };
 		50A8B39C221CDB51009ADE5A /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8B39B221CDB51009ADE5A /* ActionViewController.swift */; };
@@ -33,7 +32,6 @@
 		50A8B38B221C9FE4009ADE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50A8B38D221C9FE4009ADE5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50A8B393221CC711009ADE5A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		50A8B395221CC8AF009ADE5A /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		50A8B397221CC975009ADE5A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		50A8B399221CCF47009ADE5A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		50A8B39B221CDB51009ADE5A /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
@@ -84,12 +82,11 @@
 				50A8B393221CC711009ADE5A /* TableViewController.swift */,
 				50A8B399221CCF47009ADE5A /* TableViewCell.swift */,
 				50A8B385221C9FE3009ADE5A /* Main.storyboard */,
-				50A8B3A1221DF2E4009ADE5A /* progressViewController.swift */,
 				50A8B39F221DF011009ADE5A /* AssumptionsViewController.swift */,
+				50A8B3A1221DF2E4009ADE5A /* progressViewController.swift */,
 				50A8B39D221DED2D009ADE5A /* Global Variables.swift */,
 				50A8B39B221CDB51009ADE5A /* ActionViewController.swift */,
 				50A8B397221CC975009ADE5A /* TabBarController.swift */,
-				50A8B395221CC8AF009ADE5A /* ViewController1.swift */,
 				50A8B388221C9FE4009ADE5A /* Assets.xcassets */,
 				50A8B38A221C9FE4009ADE5A /* LaunchScreen.storyboard */,
 				50A8B38D221C9FE4009ADE5A /* Info.plist */,
@@ -174,7 +171,6 @@
 			files = (
 				50A8B39A221CCF47009ADE5A /* TableViewCell.swift in Sources */,
 				50A8B39E221DED2D009ADE5A /* Global Variables.swift in Sources */,
-				50A8B396221CC8AF009ADE5A /* ViewController1.swift in Sources */,
 				50A8B39C221CDB51009ADE5A /* ActionViewController.swift in Sources */,
 				50A8B398221CC975009ADE5A /* TabBarController.swift in Sources */,
 				50A8B394221CC711009ADE5A /* TableViewController.swift in Sources */,
