@@ -22,6 +22,7 @@
 		50A8B3B8221E3E24009ADE5A /* assumptions.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A8B3B5221E3E23009ADE5A /* assumptions.png */; };
 		50A8B3B9221E3E24009ADE5A /* progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A8B3B6221E3E23009ADE5A /* progress.png */; };
 		50A8B3BA221E3E24009ADE5A /* tracker.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A8B3B7221E3E23009ADE5A /* tracker.png */; };
+		50A8B3BC221F1E2D009ADE5A /* meal.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A8B3BB221F1E2C009ADE5A /* meal.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		50A8B3B5221E3E23009ADE5A /* assumptions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = assumptions.png; sourceTree = "<group>"; };
 		50A8B3B6221E3E23009ADE5A /* progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress.png; sourceTree = "<group>"; };
 		50A8B3B7221E3E23009ADE5A /* tracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tracker.png; sourceTree = "<group>"; };
+		50A8B3BB221F1E2C009ADE5A /* meal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meal.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		50A8B380221C9FE3009ADE5A /* Behavior Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				50A8B3BB221F1E2C009ADE5A /* meal.png */,
 				50A8B3B5221E3E23009ADE5A /* assumptions.png */,
 				50A8B3B6221E3E23009ADE5A /* progress.png */,
 				50A8B3B7221E3E23009ADE5A /* tracker.png */,
@@ -154,6 +157,7 @@
 			files = (
 				50A8B3B8221E3E24009ADE5A /* assumptions.png in Resources */,
 				50A8B38C221C9FE4009ADE5A /* LaunchScreen.storyboard in Resources */,
+				50A8B3BC221F1E2D009ADE5A /* meal.png in Resources */,
 				50A8B3BA221E3E24009ADE5A /* tracker.png in Resources */,
 				50A8B389221C9FE4009ADE5A /* Assets.xcassets in Resources */,
 				50A8B387221C9FE3009ADE5A /* Main.storyboard in Resources */,
