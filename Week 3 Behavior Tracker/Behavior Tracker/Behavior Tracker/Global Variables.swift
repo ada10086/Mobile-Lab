@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct MyDatabase{
+struct MyDatabase: Codable{
     var costGroceries = 50
     var costBuyMeal = 10
     var saved = 0

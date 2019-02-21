@@ -11,6 +11,8 @@ import UIKit
 private let reuseIdentifier = "TableViewCell"
 private let mealsKey = "MEALS_KEY"  //for retrieving from data saved from last launch
 
+private let globalKey = "GLOBAL_KEY"  //for retrieving from data saved from last launch
+
 
 // Data element for table row.
 // Note the "Codable" protocal
@@ -38,6 +40,23 @@ class TableViewController: UITableViewController {
             
             self.tableView.reloadData()
         }
+
+
+        if let data2 = UserDefaults.standard.value(forKey: globalKey) as? Data {
+            
+            if let globalData = try? PropertyListDecoder().decode(MyDatabase.self, from: data2) {
+                print(globalData)
+                myDatabase.costGroceries = globalData.costGroceries
+                myDatabase.costBuyMeal = globalData.costBuyMeal
+                myDatabase.saved = globalData.saved
+                myDatabase.savedPerMeal = globalData.savedPerMeal
+
+            }
+            
+        }
+
+
+
     }
 
     
@@ -56,6 +75,11 @@ class TableViewController: UITableViewController {
             
             // Resave element array into User defaults.
             UserDefaults.standard.set(try? PropertyListEncoder().encode(self?.meals), forKey: mealsKey)
+
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(myDatabase), forKey: globalKey)
+
+            
+            
             
             self?.tableView.reloadData()
         }
