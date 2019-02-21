@@ -15,6 +15,8 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var mealTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
+    var myImageURL: URL?
+
     // Callback method to be defined in parent view controller.
     var didSaveMeal: ((_ meal: Meal) -> ())?
     
@@ -37,12 +39,11 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            myImageView.image = image
-        }
-        else{
-            //error message
-        }
+        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+//            myImageView.image = image
+        self.myImageView.image = image
+        self.myImageURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
+
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -72,7 +73,8 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         */
 
         // Pass back data.
-        let meal = Meal(imageName: "",
+        let meal = Meal(//imageName: "",
+                        imageURL: self.myImageURL,
                         date: dateTextField.text ?? "",
                         bld: mealTextField.text ?? "",
                         type: typeTextField.text ?? "")

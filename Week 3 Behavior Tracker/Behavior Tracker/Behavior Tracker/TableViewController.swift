@@ -16,7 +16,8 @@ private let mealsKey = "MEALS_KEY"
 // Data element for table row.
 // Note the "Codable" protocal
 struct Meal: Codable {
-    let imageName: String
+//    let imageName: String
+    let imageURL:URL?
     let date: String
     let bld: String
     let type: String
@@ -92,10 +93,29 @@ class TableViewController: UITableViewController {
         
         let meal = meals[indexPath.row]
 
-        cell.mealImage.image = UIImage(named: meal.imageName)
+//        cell.mealImage.image = UIImage(named: meal.imageName)
+        
         cell.dateLabel.text = meal.date
         cell.mealLabel.text = meal.bld
         cell.typeLabel.text = meal.type
+        
+        // Unwrap element.imageURL optional.
+        if let imageURL = meal.imageURL {
+            
+            // Need to wrap try block for getting data element.
+            do {
+                // Convert imageURL to data.
+                let data = try Data(contentsOf: imageURL)
+                
+                // Convert data into UIImage.
+                let image = UIImage(data: data)
+                
+                // Set cell imageView with image.
+                cell.mealImage.image = image
+            } catch {
+                print("Error loading imageURL", error)
+            }
+        }
         
 //        cell.dateLabel.text = element.date
 //        cell.messageLabel.text = element.message
