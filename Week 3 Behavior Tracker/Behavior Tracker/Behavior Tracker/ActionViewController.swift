@@ -10,7 +10,6 @@ import UIKit
 
 class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var mealTextField: UITextField!
@@ -20,16 +19,15 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     // Callback method to be defined in parent view controller.
     var didSaveMeal: ((_ meal: Meal) -> ())?
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createPickerView()
         dismissPickerView()
-        // Do any additional setup after loading the view.
     }
     
     
-    
+    //import image button to import image from camera roll, need to add privacy -photo library usage in info.plist
     @IBAction func handleImportImage(_ sender: UIButton) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -40,20 +38,14 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-//            myImageView.image = image
         self.myImageView.image = image
         self.myImageURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
-
         self.dismiss(animated: true, completion: nil)
     }
     
     
-    
-    
-    
-    
     @IBAction func handleSaveButton(_ sender: UIButton) {
-        if typeTextField.text == "Own Food" {
+        if typeTextField.text == "Own Meal" {
             myDatabase.savedPerMeal = myDatabase.costBuyMeal - myDatabase.costGroceries/21
             myDatabase.saved += myDatabase.savedPerMeal
         }
@@ -62,24 +54,16 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             let bld = mealTextField.text,
             let type = typeTextField.text
         else { return }
-        
-        
-        // Pass back data.
-        let meal = Meal(imageName: "",
-                        date: date,
-                        bld: bld,
-                        type: type)
-        didSaveMeal?(meal)
         */
 
-        // Pass back data.
-        let meal = Meal(//imageName: "",
+        // Pass back data. save imageURL, date, bld, type, add to array
+        let meal = Meal(
                         imageURL: self.myImageURL,
                         date: dateTextField.text ?? "",
                         bld: mealTextField.text ?? "",
                         type: typeTextField.text ?? "")
         didSaveMeal?(meal)
-        //save date, bld, type, add to array
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -88,7 +72,7 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.dismiss(animated: true, completion: nil)
     }
     
-    //doesnt work???
+    //doesnt dismiss???no done button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Dismisses keyboard when done is pressed.
         view.endEditing(true)
@@ -120,7 +104,7 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     var selectedPriority: String?
-    var priorityTypes = ["Own Food", "Buy Meal"]
+    var priorityTypes = ["Own Meal", "Bought Meal"]
     
     func createPickerView(){
         let pickerView = UIPickerView()

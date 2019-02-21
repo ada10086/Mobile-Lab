@@ -9,14 +9,12 @@
 import UIKit
 
 private let reuseIdentifier = "TableViewCell"
-
-private let mealsKey = "MEALS_KEY"
+private let mealsKey = "MEALS_KEY"  //for retrieving from data saved from last launch
 
 
 // Data element for table row.
 // Note the "Codable" protocal
 struct Meal: Codable {
-//    let imageName: String
     let imageURL:URL?
     let date: String
     let bld: String
@@ -40,16 +38,6 @@ class TableViewController: UITableViewController {
             
             self.tableView.reloadData()
         }
-        
-        
-        
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     
@@ -92,9 +80,6 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! TableViewCell
         
         let meal = meals[indexPath.row]
-
-//        cell.mealImage.image = UIImage(named: meal.imageName)
-        
         cell.dateLabel.text = meal.date
         cell.mealLabel.text = meal.bld
         cell.typeLabel.text = meal.type
@@ -116,16 +101,7 @@ class TableViewController: UITableViewController {
                 print("Error loading imageURL", error)
             }
         }
-        
-//        cell.dateLabel.text = element.date
-//        cell.messageLabel.text = element.message
-        
-        //        if(indexPath.row % 2 ) == 0 {
-        //            cell.backgroundColor = .gray
-        //            //cell.myLabel.text = "Hello"
-        //        }
         // Configure the cell...
-
         return cell
     }
     
