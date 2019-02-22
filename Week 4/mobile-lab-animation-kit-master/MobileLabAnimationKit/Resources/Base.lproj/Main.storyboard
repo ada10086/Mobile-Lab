@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DmB-nO-Hf0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Timing Curves-->
+        <scene sceneID="YxT-f2-HQz">
+            <objects>
+                <viewController id="dp2-Gb-KK6" customClass="TimingCurvesViewController" customModule="MobileLabAnimationsKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="84K-yh-doU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timing Curves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTB-ai-d9T">
+                                <rect key="frame" x="110.5" y="30" width="154" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3803921569" green="0.73333333329999995" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MTB-ai-d9T" firstAttribute="centerX" secondItem="84K-yh-doU" secondAttribute="centerX" id="LE1-AQ-P4H"/>
+                            <constraint firstItem="MTB-ai-d9T" firstAttribute="top" secondItem="hub-Kr-d1V" secondAttribute="top" constant="10" id="fuN-hM-lYm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hub-Kr-d1V"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Timing Curves" image="second" id="DtK-dK-5Rk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pl-5n-h8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-900" y="415"/>
+        </scene>
+        <!--UIDynamics-->
+        <scene sceneID="Ef1-t8-jRs">
+            <objects>
+                <viewController id="vTc-ll-TWO" customClass="UIDynamicsViewController" customModule="MobileLabAnimationsKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iDD-6x-Dwg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6u-84-ITf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIDynamics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YA5-Q4-7eJ">
+                                <rect key="frame" x="124" y="30" width="128" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drag big square" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CR-jc-Bo1">
+                                <rect key="frame" x="120" y="574" width="135" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wRZ-lR-kRD" firstAttribute="trailing" secondItem="t6u-84-ITf" secondAttribute="trailing" id="2Rl-Cd-0gD"/>
+                            <constraint firstItem="t6u-84-ITf" firstAttribute="leading" secondItem="wRZ-lR-kRD" secondAttribute="leading" id="FMl-tP-3gR"/>
+                            <constraint firstItem="t6u-84-ITf" firstAttribute="top" secondItem="wRZ-lR-kRD" secondAttribute="top" id="HKQ-Xo-ugK"/>
+                            <constraint firstItem="YA5-Q4-7eJ" firstAttribute="centerX" secondItem="iDD-6x-Dwg" secondAttribute="centerX" id="RQ7-BZ-ger"/>
+                            <constraint firstItem="5CR-jc-Bo1" firstAttribute="centerX" secondItem="iDD-6x-Dwg" secondAttribute="centerX" id="hPd-Ko-B0z"/>
+                            <constraint firstItem="YA5-Q4-7eJ" firstAttribute="top" secondItem="wRZ-lR-kRD" secondAttribute="top" constant="10" id="ja5-N0-DNo"/>
+                            <constraint firstItem="wRZ-lR-kRD" firstAttribute="bottom" secondItem="5CR-jc-Bo1" secondAttribute="bottom" constant="20" id="nfq-uD-Dbw"/>
+                            <constraint firstItem="wRZ-lR-kRD" firstAttribute="bottom" secondItem="t6u-84-ITf" secondAttribute="bottom" id="yTb-nL-vCG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wRZ-lR-kRD"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="UIDynamics" image="second" id="Z1R-aU-plb"/>
+                    <connections>
+                        <outlet property="boundingView" destination="t6u-84-ITf" id="Fz2-h1-ZiD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bUe-fE-v3F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="415"/>
+        </scene>
+        <!--Animation Loop-->
+        <scene sceneID="JmV-f4-bf8">
+            <objects>
+                <viewController id="ADd-PH-ysd" customClass="AnimationLoopViewController" customModule="MobileLabAnimationsKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6MX-r5-Hk3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation Loop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLG-Ku-IJ6">
+                                <rect key="frame" x="104" y="30" width="166" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="press and hold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5a-dA-v5w">
+                                <rect key="frame" x="124" y="574" width="127" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KLG-Ku-IJ6" firstAttribute="centerX" secondItem="6MX-r5-Hk3" secondAttribute="centerX" id="C5r-qt-HDp"/>
+                            <constraint firstItem="KLG-Ku-IJ6" firstAttribute="top" secondItem="HSv-8G-wcJ" secondAttribute="top" constant="10" id="CMP-Un-a1y"/>
+                            <constraint firstItem="HSv-8G-wcJ" firstAttribute="bottom" secondItem="j5a-dA-v5w" secondAttribute="bottom" constant="20" id="ak6-Zv-XlU"/>
+                            <constraint firstItem="j5a-dA-v5w" firstAttribute="centerX" secondItem="6MX-r5-Hk3" secondAttribute="centerX" id="p3I-Gk-Hfz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HSv-8G-wcJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Animation Loop" image="first" id="br6-4e-fGA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="thL-EC-Oqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="625" y="415"/>
+        </scene>
+        <!--UIView Animations-->
+        <scene sceneID="tZT-UQ-iUv">
+            <objects>
+                <viewController id="qpq-pN-t59" customClass="UIViewAnimationsViewController" customModule="MobileLabAnimationsKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IeJ-vt-KuH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIView Animations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9u-bI-utF">
+                                <rect key="frame" x="89" y="30" width="197.5" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="O9u-bI-utF" firstAttribute="centerX" secondItem="IeJ-vt-KuH" secondAttribute="centerX" id="2A0-ct-79x"/>
+                            <constraint firstItem="O9u-bI-utF" firstAttribute="top" secondItem="Jqg-cX-Yty" secondAttribute="top" constant="10" id="IdA-gd-iCT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jqg-cX-Yty"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="UIView Animations" image="second" id="64G-XM-Xb5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Emv-PO-rin" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1706.4000000000001" y="413.3433283358321"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ax8-tZ-eji">
+            <objects>
+                <tabBarController id="DmB-nO-Hf0" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jhm-e8-aQu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qpq-pN-t59" kind="relationship" relationship="viewControllers" id="qT1-Bf-kBU"/>
+                        <segue destination="dp2-Gb-KK6" kind="relationship" relationship="viewControllers" id="w77-Vy-lmu"/>
+                        <segue destination="vTc-ll-TWO" kind="relationship" relationship="viewControllers" id="zcZ-u7-3OD"/>
+                        <segue destination="ADd-PH-ysd" kind="relationship" relationship="viewControllers" id="hL1-AK-DK2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zdJ-qT-eBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-540" y="-424"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>
