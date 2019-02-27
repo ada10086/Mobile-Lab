@@ -303,6 +303,13 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kA-Pr-eaG">
+                                <rect key="frame" x="170" y="479" width="75" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -315,6 +322,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Progress" image="progress.png" selectedImage="progress.png" id="lDx-4X-vDO"/>
                     <connections>
+                        <outlet property="goalLabel" destination="3kA-Pr-eaG" id="g3v-9K-M8M"/>
                         <outlet property="savedLabel" destination="GJQ-uQ-REG" id="TYX-Az-WcZ"/>
                     </connections>
                 </viewController>
@@ -415,6 +423,20 @@
                                 <rect key="frame" x="87" y="609" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My saving goal this week: $" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzu-lQ-1E1">
+                                <rect key="frame" x="54" y="139" width="259" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="0" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EYG-bf-yyh">
+                                <rect key="frame" x="289" y="141" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nRh-c9-fg0"/>
@@ -425,6 +447,7 @@
                         <outlet property="costBuyMealSlider" destination="SYn-Yr-bGF" id="TdD-1Y-CZr"/>
                         <outlet property="costGroceriesLabel" destination="UOJ-xv-XXS" id="AqC-6e-ns2"/>
                         <outlet property="costGroceriesSlider" destination="e6g-iB-4EG" id="Ha1-Kj-Wfi"/>
+                        <outlet property="goal" destination="EYG-bf-yyh" id="r6A-ZE-Vej"/>
                         <outlet property="groceriesImage" destination="uTx-pN-Ss3" id="FJ6-KS-YhD"/>
                         <outlet property="wasteMoneyImage" destination="JyU-bB-mBz" id="BJg-lz-aWZ"/>
                     </connections>

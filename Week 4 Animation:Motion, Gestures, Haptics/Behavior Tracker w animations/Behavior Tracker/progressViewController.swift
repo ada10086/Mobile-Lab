@@ -10,6 +10,7 @@ import UIKit
 
 class progressViewController: UIViewController {
     @IBOutlet weak var savedLabel: UILabel!
+    @IBOutlet weak var goalLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,7 @@ class progressViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         savedLabel.text = String(myDatabase.saved)
+        goalLabel.text = String(myDatabase.savingGoal)
     }
     /*
     // MARK: - Navigation

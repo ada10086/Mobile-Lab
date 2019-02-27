@@ -14,6 +14,7 @@ struct MyDatabase: Codable{
     var costBuyMeal = 10
     var saved = 0
     var savedPerMeal = 0
+    var savingGoal = 0
 }
 
 

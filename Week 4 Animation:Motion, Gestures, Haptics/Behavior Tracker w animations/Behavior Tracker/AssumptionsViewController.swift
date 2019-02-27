@@ -17,6 +17,7 @@ class AssumptionsViewController: UIViewController {
     @IBOutlet weak var costBuyMealLabel: UILabel!
     @IBOutlet weak var groceriesImage: UIImageView!
     @IBOutlet weak var wasteMoneyImage: UIImageView!
+    @IBOutlet weak var goal: UITextField!
     
     
     // Animation duration.
@@ -39,6 +40,9 @@ class AssumptionsViewController: UIViewController {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        myDatabase.savingGoal = Int(goal.text!)!
+    }
 
     
 //    // Remove animations when the view disappears.
@@ -49,6 +53,9 @@ class AssumptionsViewController: UIViewController {
 //            view.layer.removeAllAnimations()
 //        }
 //    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     
     @IBAction func handleCostGroceriesSlider(_ sender: UISlider) {
         costGroceriesLabel.text = String(Int(sender.value))
