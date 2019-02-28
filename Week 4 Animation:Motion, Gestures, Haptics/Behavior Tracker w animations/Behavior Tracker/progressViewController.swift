@@ -11,7 +11,11 @@ import UIKit
 class progressViewController: UIViewController {
     @IBOutlet weak var savedLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
+    //create shape layer - progress bar %
     let shapeLayer = CAShapeLayer()
+    //create track layer - track bar 100 %
+    let trackLayer = CAShapeLayer()
+    //create pulsating layer
     var pulsatingLayer: CAShapeLayer!
     
     let percentageLabel: UILabel = {
@@ -40,12 +44,8 @@ class progressViewController: UIViewController {
         savedLabel.text = String(myDatabase.saved)
         goalLabel.text = String(myDatabase.savingGoal)
         
-        //drawing a circle
         //let center = view.center
-        
-        //create track layer
-        let trackLayer = CAShapeLayer()
-        
+    
         //create circular path
         let circularPath = UIBezierPath(arcCenter: .zero, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
        
@@ -73,7 +73,7 @@ class progressViewController: UIViewController {
         shapeLayer.strokeColor = shapeLayerColor.cgColor
         shapeLayer.lineWidth = 20
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.lineCap = CAShapeLayerLineCap.round
+        shapeLayer.lineCap = CAShapeLayerLineCap.round // rounded ends
         shapeLayer.position = view.center
         shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi/2, 0, 0, 1)
         shapeLayer.strokeEnd = 0
@@ -87,6 +87,8 @@ class progressViewController: UIViewController {
         basicAnimation.isRemovedOnCompletion = false
         shapeLayer.add(basicAnimation, forKey: "hi")
         
+        
+        //percentage label
         view.addSubview(percentageLabel)
         percentageLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         percentageLabel.center = view.center
@@ -102,6 +104,7 @@ class progressViewController: UIViewController {
         animation.repeatCount = Float.infinity
         pulsatingLayer.add(animation,forKey:"pulsing")
     }
+    
     /*
     // MARK: - Navigation
 
