@@ -22,6 +22,8 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //add picker view
         createPickerView()
         dismissPickerView()
         let datePicker = UIDatePicker()
