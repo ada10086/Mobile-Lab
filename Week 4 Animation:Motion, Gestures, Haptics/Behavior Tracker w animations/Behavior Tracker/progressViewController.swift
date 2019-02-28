@@ -12,6 +12,7 @@ class progressViewController: UIViewController {
     @IBOutlet weak var savedLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
     let shapeLayer = CAShapeLayer()
+    var pulsatingLayer: CAShapeLayer!
     
     let percentageLabel: UILabel = {
         let label = UILabel()
@@ -21,10 +22,17 @@ class progressViewController: UIViewController {
         return label
     }()
     
+//    private func setupNotificationObservers(){
+//        NotificationCenter.default.addObserver(self, selector: #selector(handleEnterForeground),
+//                                               name: .UIApplication.willEnterForegroundNotification, object: nil)
+//    }
+//    @objc private func handleEnterForeground(){
+//        animatePulsatingLayer()
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(percentageLabel)
-
+//        setupNotificationObservers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,32 +40,38 @@ class progressViewController: UIViewController {
         savedLabel.text = String(myDatabase.saved)
         goalLabel.text = String(myDatabase.savingGoal)
         
-        percentageLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        percentageLabel.center = view.center
-        percentageLabel.text = "\(Int(percentage * 100))%"
-        
         //drawing a circle
-        
-        //        let center = view.center
+        //let center = view.center
         
         //create track layer
         let trackLayer = CAShapeLayer()
-        let circularPath = UIBezierPath(arcCenter: .zero, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        trackLayer.path = circularPath.cgPath
-        view.layer.addSublayer(shapeLayer)
         
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
-        trackLayer.lineWidth = 15
-        trackLayer.fillColor = UIColor.clear.cgColor
+        //create circular path
+        let circularPath = UIBezierPath(arcCenter: .zero, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+       
+        let pulsatingLayerColor = UIColor(red: 232.0/255.0, green: 240.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        pulsatingLayer = CAShapeLayer()
+        pulsatingLayer.path = circularPath.cgPath
+        pulsatingLayer.strokeColor = pulsatingLayerColor.cgColor
+        pulsatingLayer.lineWidth = 15
+        pulsatingLayer.fillColor = pulsatingLayerColor.cgColor
+        pulsatingLayer.position = view.center
+        view.layer.addSublayer(pulsatingLayer)
+        animatePulsatingLayer()
+        
+        let trackLayerColor = UIColor(red: 208.0/255.0, green: 216.0/255.0, blue: 229.0/255.0, alpha: 1.0)
+        trackLayer.path = circularPath.cgPath
+        trackLayer.strokeColor = trackLayerColor.cgColor
+        trackLayer.lineWidth = 20
+        trackLayer.fillColor = UIColor.white.cgColor
         trackLayer.position = view.center
         view.layer.addSublayer(trackLayer)
         
-        //create circular path
-        //        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi/2, endAngle: CGFloat(myDatabase.saved/myDatabase.savingGoal) * 2 * CGFloat.pi, clockwise: true)
+        let shapeLayerColor = UIColor(red: 156.0/255.0, green: 193.0/255.0, blue: 252.0/255.0, alpha: 1.0)
         shapeLayer.path = circularPath.cgPath
         view.layer.addSublayer(shapeLayer)
-        shapeLayer.strokeColor = UIColor.blue.cgColor
-        shapeLayer.lineWidth = 15
+        shapeLayer.strokeColor = shapeLayerColor.cgColor
+        shapeLayer.lineWidth = 20
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = CAShapeLayerLineCap.round
         shapeLayer.position = view.center
@@ -72,6 +86,21 @@ class progressViewController: UIViewController {
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
         shapeLayer.add(basicAnimation, forKey: "hi")
+        
+        view.addSubview(percentageLabel)
+        percentageLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        percentageLabel.center = view.center
+        percentageLabel.text = "\(Int(percentage * 100))%"
+    }
+    
+    private func animatePulsatingLayer(){
+        let animation = CABasicAnimation(keyPath: "transform.scale")
+        animation.toValue = 1.3
+        animation.duration = 0.8
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        animation.autoreverses = true
+        animation.repeatCount = Float.infinity
+        pulsatingLayer.add(animation,forKey:"pulsing")
     }
     /*
     // MARK: - Navigation
