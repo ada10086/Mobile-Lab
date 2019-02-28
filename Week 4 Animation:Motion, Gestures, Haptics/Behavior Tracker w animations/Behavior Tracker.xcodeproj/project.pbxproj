@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503091932228A842009726AD /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 503091922228A840009726AD /* image.png */; };
+		503091952228A90A009726AD /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 503091942228A90A009726AD /* image2.png */; };
 		5043CDC3222718BE0016AD21 /* groceries2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5043CDC2222718BD0016AD21 /* groceries2.png */; };
 		5043CDC7222719E20016AD21 /* wasteMoney.png in Resources */ = {isa = PBXBuildFile; fileRef = 5043CDC6222719E20016AD21 /* wasteMoney.png */; };
 		50A8B382221C9FE3009ADE5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8B381221C9FE3009ADE5A /* AppDelegate.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		503091922228A840009726AD /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		503091942228A90A009726AD /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
 		5043CDC2222718BD0016AD21 /* groceries2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groceries2.png; sourceTree = "<group>"; };
 		5043CDC6222719E20016AD21 /* wasteMoney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wasteMoney.png; sourceTree = "<group>"; };
 		50A8B37E221C9FE3009ADE5A /* Behavior Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Behavior Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +85,8 @@
 				5043CDC2222718BD0016AD21 /* groceries2.png */,
 				5043CDC6222719E20016AD21 /* wasteMoney.png */,
 				50A8B3BB221F1E2C009ADE5A /* meal.png */,
+				503091942228A90A009726AD /* image2.png */,
+				503091922228A840009726AD /* image.png */,
 				50A8B3B5221E3E23009ADE5A /* assumptions.png */,
 				50A8B3B6221E3E23009ADE5A /* progress.png */,
 				50A8B3B7221E3E23009ADE5A /* tracker.png */,
@@ -158,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503091952228A90A009726AD /* image2.png in Resources */,
 				50A8B3B8221E3E24009ADE5A /* assumptions.png in Resources */,
 				50A8B38C221C9FE4009ADE5A /* LaunchScreen.storyboard in Resources */,
 				50A8B3BC221F1E2D009ADE5A /* meal.png in Resources */,
@@ -167,6 +174,7 @@
 				5043CDC3222718BE0016AD21 /* groceries2.png in Resources */,
 				50A8B3B9221E3E24009ADE5A /* progress.png in Resources */,
 				5043CDC7222719E20016AD21 /* wasteMoney.png in Resources */,
+				503091932228A842009726AD /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

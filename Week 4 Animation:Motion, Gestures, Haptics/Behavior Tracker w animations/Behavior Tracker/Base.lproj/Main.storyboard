@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal.png" translatesAutoresizingMaskIntoConstraints="NO" id="wi8-Nk-LJ0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2.png" translatesAutoresizingMaskIntoConstraints="NO" id="wi8-Nk-LJ0">
                                 <rect key="frame" x="74.5" y="405.5" width="265.5" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="RtJ-8d-XFe"/>
@@ -261,8 +261,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="dtK-8Z-q7i">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="dtK-8Z-q7i">
                                 <rect key="frame" x="77.5" y="99" width="259" height="98.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-yE-Asn">
                                         <rect key="frame" x="47" y="0.0" width="165.5" height="48"/>
@@ -278,8 +279,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Based on your saving goal of" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRT-dW-03u">
-                                <rect key="frame" x="71" y="660" width="272" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Based on your saving goal of:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRT-dW-03u">
+                                <rect key="frame" x="68" y="660" width="278" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
@@ -317,8 +318,9 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pGk-Zt-9Vg">
-                                <rect key="frame" x="171" y="221" width="117" height="45"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="pGk-Zt-9Vg">
+                                <rect key="frame" x="173" y="230" width="110" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0os-t3-Fs3">
                                         <rect key="frame" x="0.0" y="0.0" width="23" height="45"/>
@@ -331,7 +333,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJQ-uQ-REG">
-                                        <rect key="frame" x="31" y="0.0" width="86" height="45"/>
+                                        <rect key="frame" x="24" y="0.0" width="86" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="QnU-8z-TC2"/>
                                             <constraint firstAttribute="width" constant="86" id="Thm-4r-be8"/>
@@ -344,12 +346,6 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="pGk-Zt-9Vg" firstAttribute="centerY" secondItem="2zD-kb-gAa" secondAttribute="centerY" constant="-200" id="BCw-59-8d9"/>
-                            <constraint firstItem="pGk-Zt-9Vg" firstAttribute="centerX" secondItem="2zD-kb-gAa" secondAttribute="centerX" id="DEh-HU-IFs"/>
-                            <constraint firstItem="dtK-8Z-q7i" firstAttribute="centerX" secondItem="2zD-kb-gAa" secondAttribute="centerX" id="i47-Wr-jEJ"/>
-                            <constraint firstItem="dtK-8Z-q7i" firstAttribute="centerY" secondItem="2zD-kb-gAa" secondAttribute="centerY" constant="-300" id="myY-o5-43P"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6UX-LV-Lwq"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Progress" image="progress.png" selectedImage="progress.png" id="lDx-4X-vDO"/>
@@ -530,7 +526,7 @@
     <resources>
         <image name="assumptions.png" width="30" height="30"/>
         <image name="groceries2.png" width="512" height="512"/>
-        <image name="meal.png" width="640" height="663"/>
+        <image name="image2.png" width="256" height="256"/>
         <image name="progress.png" width="35" height="35"/>
         <image name="tracker.png" width="30" height="30"/>
         <image name="wasteMoney.png" width="480" height="480"/>
