@@ -50,7 +50,7 @@ class TableViewController: UITableViewController {
                 myDatabase.costBuyMeal = globalData.costBuyMeal
                 myDatabase.saved = globalData.saved
                 myDatabase.savedPerMeal = globalData.savedPerMeal
-
+                myDatabase.savingGoal = globalData.savingGoal
             }
             
         }
