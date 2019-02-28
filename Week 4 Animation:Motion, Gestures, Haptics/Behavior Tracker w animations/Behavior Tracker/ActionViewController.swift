@@ -22,6 +22,7 @@ class ActionViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // hi
         
         //add picker view
         createPickerView()
