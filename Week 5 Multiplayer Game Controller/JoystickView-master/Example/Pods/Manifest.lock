@@ -1,0 +1,16 @@
+PODS:
+  - JoystickView (1.0.0)
+
+DEPENDENCIES:
+  - JoystickView (from `../`)
+
+EXTERNAL SOURCES:
+  JoystickView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JoystickView: b8f1b5b20f1279aa417bdb3f95aeb42e2d8bb15d
+
+PODFILE CHECKSUM: 53229c331b33054e36dd135add96eb271a7071a2
+
+COCOAPODS: 1.6.1
