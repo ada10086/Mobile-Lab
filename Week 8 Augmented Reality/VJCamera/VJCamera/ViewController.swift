@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 import CoreLocation
-//import Vision
 
 import CoreAudio
 import CoreAudioKit
@@ -17,11 +16,6 @@ import Foundation
 import AVKit
 
 
-// Sample filters and settings.
-// For more resournces/examples:
-//   https://developer.apple.com/library/content/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html
-//   https://developer.apple.com/library/content/documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html
-//   https://github.com/FlexMonkey/Filterpedia
 
 let NoFilter = "No Filter"
 let NoFilterFilter: CIFilter? = nil
@@ -85,11 +79,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var recorder: AVAudioRecorder!
 
     // Image view for filtered image.
-    
     @IBOutlet weak var filteredImage: UIImageView!
-    //    var filteredImage: UIImageView?
-
-    
     
     // Outlets to buttons.
     @IBOutlet weak var cameraButton: UIButton!
@@ -99,12 +89,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        filteredImage.frame = UIScreen.main.bounds
-//        filteredImage.frame = self.view.bounds
-//        filteredImage.contentMode = .scaleAspectFit
-//        filteredImage.clipsToBounds = true
-
+        
         // Camera device setup.
         setupDevice()
         setupInputOutput()
@@ -113,11 +98,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         initRecorder()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        recorder.updateMeters()
-//        let level = recorder.averagePower(forChannel: 0)
-//        print("level:\(level)")
-//    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -143,6 +123,18 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     @IBAction func changeFilterButton(_ sender: UIButton) {
         // Increment to next index.
         filterIndex = filterIndex + 1 == Filters.count ? 0 : filterIndex + 1
+
+        // Set button ui name.
+        let filterName = FilterNames[filterIndex]
+        filterButton.setTitle(filterName, for: .normal)
+
+        // Set current filter.
+        currentFilter =  Filters[filterName]!
+    }
+    
+    @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
+        // Increment to next index.
+        filterIndex = filterIndex + 1 == Filters.count ? 0 : filterIndex + 1
         
         // Set button ui name.
         let filterName = FilterNames[filterIndex]
@@ -151,7 +143,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         // Set current filter.
         currentFilter =  Filters[filterName]!
     }
-    
     
     // AVCaptureVideoDataOutputSampleBufferDelegate method.
     func captureOutput(_ output: AVCaptureOutput,
