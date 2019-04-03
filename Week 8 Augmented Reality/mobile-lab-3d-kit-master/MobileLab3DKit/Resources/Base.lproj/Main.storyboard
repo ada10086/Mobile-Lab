@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="MobileLab3DKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cf4-xy-svC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46F-Jc-Xdv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </sceneKitView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbi-7M-w9d">
+                                <rect key="frame" x="20" y="617" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.3803921569" green="0.73333333329999995" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Lag-yB-zPr"/>
+                                </constraints>
+                                <state key="normal" title="Animation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="7Vu-ff-r63"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yIA-1s-3r6" firstAttribute="bottom" secondItem="qbi-7M-w9d" secondAttribute="bottom" constant="20" id="4S2-Ed-RDC"/>
+                            <constraint firstItem="46F-Jc-Xdv" firstAttribute="top" secondItem="yIA-1s-3r6" secondAttribute="top" id="PnK-dS-0YN"/>
+                            <constraint firstItem="qbi-7M-w9d" firstAttribute="leading" secondItem="yIA-1s-3r6" secondAttribute="leading" constant="20" id="RDh-oo-gqr"/>
+                            <constraint firstItem="yIA-1s-3r6" firstAttribute="bottom" secondItem="46F-Jc-Xdv" secondAttribute="bottom" id="ZiS-0D-JXc"/>
+                            <constraint firstItem="46F-Jc-Xdv" firstAttribute="leading" secondItem="yIA-1s-3r6" secondAttribute="leading" id="gQa-sw-hCm"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qbi-7M-w9d" secondAttribute="trailing" constant="20" symbolic="YES" id="pG2-gs-A7M"/>
+                            <constraint firstItem="yIA-1s-3r6" firstAttribute="trailing" secondItem="46F-Jc-Xdv" secondAttribute="trailing" id="rfJ-kq-J5x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yIA-1s-3r6"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationButton" destination="qbi-7M-w9d" id="tfW-cG-jr9"/>
+                        <outlet property="sceneView" destination="46F-Jc-Xdv" id="i7e-sx-xx5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
