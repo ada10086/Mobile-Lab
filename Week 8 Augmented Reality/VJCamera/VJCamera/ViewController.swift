@@ -40,6 +40,15 @@ var inputScale = 0.5
 let BumpDistortionLinear = "BumpDistortionLinear"
 let BumpDistortionLinearFilter = CIFilter(name: "CIBumpDistortionLinear", parameters: ["inputRadius": 400, "inputScale": 0.5])
 
+var inputRotation = 0
+var inputRadius = 10
+let LightTunnel = "LightTunnel"
+let LightTunnelFilter = CIFilter(name: "CILightTunnel", parameters: ["inputRotation": 1, "inputRadius": 10])
+
+var inputCount = 6
+let Kaleidoscope = "Kaleidoscope"
+let KaleidoscopeFilter = CIFilter(name: "CIKaleidoscope", parameters: ["inputAngle": 1.57, "inputCount": 6])
+
 let Filters = [
     NoFilter: NoFilterFilter,
     CircularScreen: CircularScreenFilter,
@@ -47,6 +56,8 @@ let Filters = [
     SixfoldReflectedTile: SixfoldReflectedTileFilter,
     ZoomBlur: ZoomBlurFilter,
     BumpDistortionLinear: BumpDistortionLinearFilter,
+    LightTunnel: LightTunnelFilter,
+    Kaleidoscope: KaleidoscopeFilter
 ]
 
 let FilterNames = [String](Filters.keys)
@@ -142,6 +153,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         // Set current filter.
         currentFilter =  Filters[filterName]!
+        print("tapped")
     }
     
     // AVCaptureVideoDataOutputSampleBufferDelegate method.
@@ -206,7 +218,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             if level < -30 {
                 inputWidthSixfold = 100
             }else {
-                inputWidthSixfold = Int(myMap(n: level, start1: -30, stop1: 0, start2: 100, stop2: 500))
+                inputWidthSixfold = Int(myMap(n: level, start1: -30, stop1: 0, start2: 100, stop2: 400))
             }
             self.currentFilter!.setValue(inputWidthSixfold, forKey: kCIInputWidthKey)
         }
@@ -226,12 +238,31 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             if level < -20 {
                 inputScale = 0.5
             } else {
-                inputScale = Double(myMap(n: level, start1: -20, stop1: 0, start2: 0.5, stop2: 7))
+                inputScale = Double(myMap(n: level, start1: -20, stop1: 0, start2: 0.5, stop2: 4))
             }
             self.currentFilter!.setValue(inputScale, forKey: kCIInputScaleKey)
         }
-        
 
+        if self.currentFilter == Filters["LightTunnel"] {
+            self.currentFilter!.setValue(CIVector(x:filteredImage.size.width/2, y: filteredImage.size.height/2), forKey: kCIInputCenterKey)
+            if level < -30 {
+                inputRotation = 1
+            } else {
+                inputRotation = Int(myMap(n: level, start1: -30, stop1: 0, start2: 1, stop2: 40))
+            }
+            self.currentFilter!.setValue(inputRotation, forKey: "inputRotation")
+        }
+        
+    
+        if self.currentFilter == Filters["Kaleidoscope"] {
+            self.currentFilter!.setValue(CIVector(x:filteredImage.size.width/2, y: filteredImage.size.height/2), forKey: kCIInputCenterKey)
+            if level < -20 {
+                inputCount = 6
+            } else {
+                inputCount = Int(myMap(n: level, start1: -20, stop1: 0, start2: 6, stop2: 30))
+            }
+            self.currentFilter!.setValue(inputCount, forKey: "inputCount")
+        }
     }
     
     
